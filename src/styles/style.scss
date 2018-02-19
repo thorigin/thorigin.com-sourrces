@@ -1,0 +1,386 @@
+
+@import 'theme.scss';
+
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+body {
+    .comingsoon {
+        display: none;
+    }
+    &.nojs {
+        section.content.in > div {
+            margin-bottom: 5em;
+        }
+    }
+    .tooltip-inner { 
+        font-size: 1.5em;
+        padding: 5px 12px;
+        border-radius: 4px;
+        color: #FFF;
+        text-align: center;
+        background-color: #000;
+        
+    }
+    .navigation {
+        position: relative;
+        z-index: 999;
+        height: 200px;
+        background-color: rgba(0,0,0, 0.7);
+        .banner {
+            padding-top: 15px;
+            padding-left: 25px;
+            @media (max-width: $screen-md-min) {
+
+            }
+        }
+        h3 {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .title {
+            padding-left: 40px;
+            @media (max-width: $screen-md-min) {
+                padding-left: 50px;
+            }
+            > .last {
+                //color: red;
+                font-weight: bold;
+            }
+            > .subtitle {
+                font-size: 0.9em;
+            }
+        }
+        ul.desktop-nav {
+            margin-top: 25px;
+            li {
+                font-size: 1.05em;
+                padding: 12px;
+                text-align: center;
+                height: 40px;
+                font-weight: bold;
+                text-transform: uppercase;
+                background-color: rgba(16,16,16, 0.7);
+                &:hover {
+                    background-color: #555;
+                }
+                #{$a-tags},#{$a-tags-hover} {
+                    text-decoration: none;
+                    color: #FFF;
+                }
+                #{$a-tags} {
+
+                }
+                #{$a-tags-hover} {
+                }
+                a.selected {
+
+                }
+            }
+        }
+        .mobile-nav nav {
+            margin-top: 10px;
+            position: relative;
+            &.affix {
+
+            }
+
+            &.affix-top {
+            }
+
+            &.affix-bottom {
+            }
+            z-index: 999999999;
+            > .dropdown {
+                //position: fixed;
+                > ul {
+                    text-align: center;
+                    //position: relative;
+                    width: 300px;
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    > li {
+                        line-height: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        display: none;
+        min-height: 600px;
+        height: 100%;
+        width: 100%;
+        &.in {
+            display: block;
+            top: 0;       
+            z-index: 99;
+        }
+        @media (min-width: $screen-lg-min) {
+            .pull-right-lg {
+                float: right;
+            }
+        }
+        @media (min-width: $screen-sm-min) {
+            .list-inline-sm {
+                > li {
+                    display: inline;
+                }
+            }
+        }
+        &.content-home {
+            font-size: 1.2em;
+            line-height: 2;
+            h2 {
+                    border-bottom: 2px solid red;
+                font-weight: bold;
+            }
+        }
+        &.content-projects {
+            .highlights {
+                > div {
+                    margin-top: 2em;
+                }
+                .bullet {
+                    margin: 0 auto;
+                    position: relative;
+                    text-align: center;
+                    //color: #000;
+
+                    width: 85%;
+                    padding-top: 20%;
+                    padding-bottom: 65%;
+                    border-radius: 50%;
+                    border: 2px solid rgba(0, 0, 0, 0.9);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    > p {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                    .keywords {
+                        > h5 {
+                            font-weight: bold;
+                        }
+                        > span {
+                            font-style: italic;
+                            font-size: 0.85em;
+                        }
+                    }
+                    height: 150px;
+                }
+            }
+        }
+        &.content-articles {
+        }
+        &.content-resume {
+            font-size: 1.1em;
+            line-height: 2;
+            .resume-header-1 {
+                margin-top: 2 em;
+            }
+            .resume-list  {
+                @media (max-width: $screen-xs-max   ) {
+                    margin-top: 0.5em;
+                    li {
+                        padding-left: 2px;
+                        padding-right: 2px;
+                    }
+                }
+            }
+            .extra-padding > li {
+                margin-bottom: 15px;
+            }
+            .education,.experience {
+                li {
+                    position: relative;
+                    margin-bottom: 20px;
+                }
+                .diploma,.title {
+                    border-bottom: 1px dotted #CCC;
+                    font-size: 1.3em;                    
+                }
+                .duration {                    
+                    color: #FFF;;
+                    display: block;
+                    @media (min-width: $screen-md-min) {
+                        position: absolute;
+                        top: 12px;
+                        right: 0;
+                        text-align: right;      
+                    }                                       
+                    font-weight: 700;
+                }   
+                .place {                    
+                    font-style: italic;
+                    display: block;
+                    color: #00ccff;
+                    margin-left: 25px;
+                }
+            }
+            .education {
+                .diploma {
+                    font-weight: bold;
+                    display: block;
+                    
+                }                
+                .note {
+                    display: block;
+                    color: burlywood;
+                    margin-left: 25px;
+                }
+            }
+            .experience {                               
+                .title {
+                    font-weight: bold;
+                    display: block;                 
+                }
+                .desc {
+                    display: block;
+                    color: #DDD;
+                    margin-left: 25px;
+                }
+            }
+            .technologies {
+                li {
+                    border-radius: 5%;
+                    background-color: #CCC;
+                    color: #000;
+                    font-size: 0.9em;
+                    margin: 3px;                    
+                }
+            }
+        }
+        &.content-contact {         
+            position: relative;
+            h2 {
+                margin-bottom: 20px;
+            }
+            .contact-title {
+                @media (max-width: $screen-sm-min) {
+                    padding-top: 1em;
+                }
+            }
+            .direct,.message {
+                padding: 25px;
+                position: relative;
+                h2 {
+                    margin-bottom: 40px;
+                }                
+                min-height: 400px;
+            }
+            .direct {
+                background-color: rgba(255, 0, 0, 0.25);
+                padding-left: 50px;
+                p {
+                    .key {
+                        font-weight: bold;
+                    }              
+                    font-size: 1.2em;   
+                    line-height: 2;
+                }
+            }
+            .message {
+                background-color: rgba(0, 0, 0, 0.5);
+                .message-thanks {
+                    display: none;
+                }
+                .message-get-back {
+                    margin-top: 5em;
+                }
+                button {
+                    width: 35%;
+                    float: right;
+                }
+            }
+        }        
+        .trans-rect {
+            background-color: rgba(0, 0, 0, 0.85);
+
+        }
+        
+        .extra-padding {
+            @media (min-width: $screen-sm-min) {
+                padding: 15px;
+            }
+            @media (min-width: $screen-md-min) {
+                padding: 25px;
+            }
+            @media (min-width: $screen-lg-min) {
+                padding: 50px;
+            }
+        }
+       
+    }
+    > .footer {  
+        height: 50px;
+        text-align: center;
+    }
+
+    &.enable-transition .backgrounds {                
+        transition: opacity 1.0s ease-in, transform 1.5s ease-in;
+    }
+    
+    .backgrounds {
+        position: fixed;
+        z-index: 0;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        opacity: 0;              
+        
+        &.home {            
+            background-image: url(../images/home-bg.jpeg);
+        }
+        &.projects {
+            background-image: url(../images/projects-bg.jpeg);
+        }
+        &.articles {
+           background-image: url(../images/articles-bg.jpeg);
+        }
+        &.resume {
+            background-image: url(../images/resume-bg.jpeg);
+        }
+        &.contact {
+            background-image: url(../images/contact-bg.jpeg);
+        }       
+    }
+    $contents: home projects articles resume contact;
+    @each $content in $contents {
+        &.#{$content} .backgrounds.#{$content} { 
+            opacity: 1; 
+            transform: scale(1.1);
+        }
+    }
+
+    
+}
+
+.vertical-offset-1 {
+    margin-top: 1em;
+}
+
+.vertical-offset-2 {
+    margin-top: 2em;
+}
+
+.vertical-offset-3 {
+    margin-top: 3em;
+}
+
+.vertical-offset-4 {
+    margin-top: 4em;
+}
+
+.vertical-sm-offset-1 {
+    @media (max-width: $screen-md-min) {
+        margin-top: 1em;
+    }
+}

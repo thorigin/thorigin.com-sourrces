@@ -1,0 +1,55 @@
+Omar Thor
+Bakersfield, CA 93313
+Phone: (661) 381-3740 | Email: omar@thorigin.com
+thorigin.com
+
+
+EDUCATION & DEVELOPMENT
+
+* Computer Science, Bsc. - August '16 - May '18
+    - California State University, Bakersfield
+    - Expected graduation May 2018.
+
+* Math & Science, AA. - August '14 - May '16
+    - Taft College - Taft, CA
+
+* Entrepreneur & Management, Certificate - August '11 - Dec '11
+    - Innov. Center Iceland, Iceland
+
+EXPERIENCE
+
+* Undergraduate Research - CSUB, Bakersfield, CA - 2017 - 2018
+Data gathering and analysis of ultra-wide-band sensor technologies with focus on
+preparing data for artificial intelligence application.
+
+* Software Consultant - NCS ehf, Iceland - 2015 - 2017
+Continuation support role with aim to provide expert advice and solutions for 
+various NCS projects.
+
+* Principal Software Engineer - NCS ehf, Iceland - 2011 - 2015
+Modeled and implemented business solutions with focus on using open source 
+technologies. Played a key role in choosing technologies, coding conventions, 
+applied defensive programming techniques, and followed industry best practice 
+standards. Involved in all aspects of the software development life cycle (SDLC)
+and maintenance of various internal solutions to hardware and software.
+    - Migrated projects from a in-house architecture to a cloud platform which 
+      yielded a uptime increase by 80%.
+    - Incorporated all projects to a continuous integration solution which 
+      automated testing, deployment and verification to provide rolling releases
+      which reduced downtime by a factor of 5.
+    - Undertook in a major refactoring which increased modularization and 
+      testability of various components which resulted decreased deployment time
+      and performance.
+
+* Technician - IOD ehf, Iceland - 2008 - 2011
+Diagnosed and troubleshooted clientèle's hardware and software issues, providing
+rapid solutions to clients, including the development and maintenance of various
+internal solutions.
+
+TECHNOLOGIES & STACKS
+
+C++ (11/14/17), C, Java (1.5-1.9), Java EE 7 (EJB, JPA, JMS, JSP, JSF, JAX-RS,
+JDBC, etc), LISP, Prolog, PHP, JavaScript, XML/HTML/XHTML/HTML5, CSS, TCP/IP,
+SQL, MySQL, Postgresql, Microsoft SQL Server, Hibernate, TopLink, REST, SOAP,
+OSGi, JUnit, Maven, Jenkins, NetBeans, Google Web Toolkit, Eclipse, Ant, SCM,
+GIT, SVN, MatLab, Linux, Windows, UML, and more.

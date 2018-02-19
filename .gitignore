@@ -1,0 +1,5 @@
+dist
+.directory
+node_modules
+nbproject
+package-lock.json
