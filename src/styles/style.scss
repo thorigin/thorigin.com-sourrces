@@ -16,14 +16,14 @@ body {
             margin-bottom: 5em;
         }
     }
-    .tooltip-inner { 
+    .tooltip-inner {
         font-size: 1.5em;
         padding: 5px 12px;
         border-radius: 4px;
         color: #FFF;
         text-align: center;
         background-color: #000;
-        
+
     }
     .navigation {
         position: relative;
@@ -117,7 +117,7 @@ body {
         width: 100%;
         &.in {
             display: block;
-            top: 0;       
+            top: 0;
             z-index: 99;
         }
         @media (min-width: $screen-lg-min) {
@@ -201,20 +201,20 @@ body {
                 }
                 .diploma,.title {
                     border-bottom: 1px dotted #CCC;
-                    font-size: 1.3em;                    
+                    font-size: 1.3em;
                 }
-                .duration {                    
+                .duration {
                     color: #FFF;;
                     display: block;
                     @media (min-width: $screen-md-min) {
                         position: absolute;
                         top: 12px;
                         right: 0;
-                        text-align: right;      
-                    }                                       
+                        text-align: right;
+                    }
                     font-weight: 700;
-                }   
-                .place {                    
+                }
+                .place {
                     font-style: italic;
                     display: block;
                     color: #00ccff;
@@ -225,18 +225,18 @@ body {
                 .diploma {
                     font-weight: bold;
                     display: block;
-                    
-                }                
+
+                }
                 .note {
                     display: block;
                     color: burlywood;
                     margin-left: 25px;
                 }
             }
-            .experience {                               
+            .experience {
                 .title {
                     font-weight: bold;
-                    display: block;                 
+                    display: block;
                 }
                 .desc {
                     display: block;
@@ -250,11 +250,11 @@ body {
                     background-color: #CCC;
                     color: #000;
                     font-size: 0.9em;
-                    margin: 3px;                    
+                    margin: 3px;
                 }
             }
         }
-        &.content-contact {         
+        &.content-contact {
             position: relative;
             h2 {
                 margin-bottom: 20px;
@@ -269,7 +269,7 @@ body {
                 position: relative;
                 h2 {
                     margin-bottom: 40px;
-                }                
+                }
                 min-height: 400px;
             }
             .direct {
@@ -278,8 +278,8 @@ body {
                 p {
                     .key {
                         font-weight: bold;
-                    }              
-                    font-size: 1.2em;   
+                    }
+                    font-size: 1.2em;
                     line-height: 2;
                 }
             }
@@ -296,12 +296,12 @@ body {
                     float: right;
                 }
             }
-        }        
+        }
         .trans-rect {
             background-color: rgba(0, 0, 0, 0.85);
 
         }
-        
+
         .extra-padding {
             @media (min-width: $screen-sm-min) {
                 padding: 15px;
@@ -313,54 +313,97 @@ body {
                 padding: 50px;
             }
         }
-       
+
     }
-    > .footer {  
+    > .footer {
         height: 50px;
         text-align: center;
     }
 
-    &.enable-transition .backgrounds {                
-        transition: opacity 1.0s ease-in, transform 1.5s ease-in;
-    }
-    
     .backgrounds {
-        position: fixed;
-        z-index: 0;
-        top: 0; 
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-size: cover;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        opacity: 0;              
-        
-        &.home {            
-            background-image: url(../images/home-bg.jpeg);
+        .loading, .loaded {
+            position: fixed;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            opacity: 0;
         }
-        &.projects {
-            background-image: url(../images/projects-bg.jpeg);
+        .loading {
+            filter: blur(20px);
         }
-        &.articles {
-           background-image: url(../images/articles-bg.jpeg);
+        &.home .loading {
+            background-image: url(../images/home-bg-small.jpeg);
         }
-        &.resume {
-            background-image: url(../images/resume-bg.jpeg);
+        &.projects .loading  {
+            //background-image: url(../images/projects-bg-small.jpeg);
         }
-        &.contact {
-            background-image: url(../images/contact-bg.jpeg);
-        }       
+        &.articles .loading  {
+           //background-image: url(../images/articles-bg-small.jpeg);
+        }
+        &.resume .loading  {
+            background-image: url(../images/resume-bg-small.jpeg);
+        }
+        &.contact .loading  {
+            background-image: url(../images/contact-bg-small.jpeg);
+        }
     }
+    .backgrounds {
+        .loaded {
+            filter: blur(20px);
+        }
+        .loading, .loaded {
+            //transform: scale(1.1);
+        }
+        &.done {
+            .loading {
+                filter: none !important;
+                opacity: 0 !important;
+
+            }
+            .loaded {
+                filter: none;
+            }
+
+            &.home .loaded {
+                background-image: url(../images/home-bg.jpeg);
+            }
+            &.projects .loaded {
+                //background-image: url(../images/projects-bg.jpeg);
+            }
+            &.articles .loaded {
+               //background-image: url(../images/articles-bg.jpeg);
+            }
+            &.resume .loaded {
+                background-image: url(../images/resume-bg.jpeg);
+            }
+            &.contact .loaded {
+                background-image: url(../images/contact-bg.jpeg);
+            }
+        }
+    }
+
+    &.enable-transition .backgrounds {
+        .loading {
+            transition: opacity 1.0s ease-in, transform 1.5s ease-in, filter 1.5s ease-out;
+        }
+        .loaded {
+            transition: opacity 1.0s ease-in, transform 1.5s ease-in, filter 1.5s ease-in;
+        }
+    }
+
     $contents: home projects articles resume contact;
     @each $content in $contents {
-        &.#{$content} .backgrounds.#{$content} { 
-            opacity: 1; 
+        &.#{$content} .backgrounds.#{$content} div {
+            opacity: 1;
             transform: scale(1.1);
         }
     }
 
-    
 }
 
 .vertical-offset-1 {

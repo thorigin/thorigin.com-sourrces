@@ -25,15 +25,15 @@ var switchView = function(targetSection) {
     }
     var res = $('#' + targetSection);
     var body = $(document.body);
-    if(res.length > 0) {                   
+    if(res.length > 0) {
         //hide last selected section
-        $('.content.in').removeClass('in');  
+        $('.content.in').removeClass('in');
         //show selected section
-        res.addClass('in');         
+        res.addClass('in');
         if(lastView) {
             body.removeClass(lastView);
         }
-        body.addClass(targetSection);        
+        body.addClass(targetSection);
     }
     lastView = targetSection;
 //    $('html, body').animate({
@@ -51,11 +51,11 @@ $(window).on('hashchange', function() {
 
 $('a').click(function(e) {
     var athis = $(this);
-    var href = athis.attr('href');    
+    var href = athis.attr('href');
     if(href.startsWith("#")) {
         var targetSection = athis.attr('href').substr(1);
-        switchView(targetSection);        
-    }    
+        switchView(targetSection);
+    }
 });
 
 $('#mobileMenu a').click(function(e) {
@@ -63,24 +63,62 @@ $('#mobileMenu a').click(function(e) {
     window.location.hash = athis.attr('href');
 });
 
-$(document.body).addClass('enable-transition').removeClass('nojs');
 $('.content.in').removeClass('in');
 
 switchView(location.hash ? location.hash : 'home');
 
+
+import home_bg from './../images/home-bg.jpeg';
+import resume_bg from './../images/resume-bg.jpeg';
+import contact_bg from './../images/contact-bg.jpeg';
+
 $(()=> {
+    //enable transitions
+    $(document.body).addClass('enable-transition').removeClass('nojs');
+
     //Naive attempt at reducing crawlers from reading email/phone
     var contactNumExpr = '(661)' + ' ' + '381' + '-' + '3740';
     var contactMailExpr = 'omar' + '@' + 'thor' + 'igin' + '.com';
-    
+
     $('.FillContactNum')        .attr('href', 'phone:' + contactNumExpr).html(contactNumExpr);
-    $('.FillContactMail')  .attr('href', 'mailto:' + contactMailExpr).html(contactMailExpr);            
-    
-    //init analytics        
+    $('.FillContactMail')  .attr('href', 'mailto:' + contactMailExpr).html(contactMailExpr);
+
+    //load high res background at a later time
+    var load_high_res_bg_done = false;
+
+    //High res load function
+    var load_high_res_bg = () => {
+        if(!load_high_res_bg_done) {
+            console.log('Testing whetehr window is large enough..');
+            if($(window).width() > 768) {
+                console.log('Loading images');
+                var load = { home: home_bg, resume: resume_bg, contact: contact_bg };
+
+                $.each(load, (key, value) => {
+                    var tempImg = $('<img/>').attr('src', value).hide().appendTo(document.body);
+                    tempImg.on('load', () => {
+                        tempImg.remove();
+                    });
+                    var key_bg = $('.backgrounds.' + key).addClass('done');
+                });
+                load_high_res_bg_done = true;
+            } else {
+                console.log('Test false');
+            }
+        }
+    };
+
+    setTimeout(() => {
+        load_high_res_bg();
+    }, 750);
+
+    $(window).on('resize', load_high_res_bg);
+
+    //init analytics
     ga.init();
+
+    $(document.body).removeClass('loading').addClass('loaded');
 });
-
-
 
 
 $('[data-toggle="tooltip"]').tooltip();

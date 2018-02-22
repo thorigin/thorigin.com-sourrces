@@ -88,9 +88,10 @@ module.exports = {
                 test: /\.(jpe?g|gif|png|svg|woff|woff2|ttf|eot)(\?\S*)?$/,
                 use: [
                     {
-                        loader: "file-loader?",
+                        loader: "url-loader",
                         options: {
-                            name: 'assets/[hash].[ext]'
+                            name: 'assets/[hash].[ext]',
+                            limit: 10240
                         }
                     }
                 ]
