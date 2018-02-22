@@ -179,17 +179,23 @@ body {
         &.content-resume {
             font-size: 1.1em;
             line-height: 2;
-            .resume-header-1 {
-                margin-top: 2 em;
+            h2.resume-header-1 {
+                @media (min-width: $screen-lg-min) {
+                    margin-top: 2.5em;
+                }
             }
             .resume-list  {
-                @media (max-width: $screen-xs-max   ) {
+
+                @media (max-width: $screen-xs-max ) {
                     margin-top: 0.5em;
                     li {
                         padding-left: 2px;
                         padding-right: 2px;
                     }
                 }
+            }
+            .extra-padding:first-of-type {
+                padding-top: 5px;
             }
             .extra-padding > li {
                 margin-bottom: 15px;
