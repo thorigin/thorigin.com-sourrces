@@ -80,7 +80,7 @@ $(()=> {
     var contactNumExpr = '(661)' + ' ' + '381' + '-' + '3740';
     var contactMailExpr = 'omar' + '@' + 'thor' + 'igin' + '.com';
 
-    $('.FillContactNum')        .attr('href', 'phone:' + contactNumExpr).html(contactNumExpr);
+    $('.FillContactNum')        .attr('href', 'tel:' + contactNumExpr).html(contactNumExpr);
     $('.FillContactMail')  .attr('href', 'mailto:' + contactMailExpr).html(contactMailExpr);
 
     //load high res background at a later time
