@@ -39,6 +39,8 @@ var switchView = function(targetSection) {
 //    $('html, body').animate({
 //        scrollTop: $($.attr(this, 'href')).offset().top
 //    }, 500);
+
+    ga.send();
 };
 
 $(window).on('hashchange', function() {
@@ -73,8 +75,6 @@ import resume_bg from './../images/resume-bg.jpeg';
 import contact_bg from './../images/contact-bg.jpeg';
 
 $(()=> {
-    //enable transitions
-    $(document.body).addClass('enable-transition').removeClass('nojs');
 
     //Naive attempt at reducing crawlers from reading email/phone
     var contactNumExpr = '(661)' + ' ' + '381' + '-' + '3740';
@@ -117,8 +117,24 @@ $(()=> {
     //init analytics
     ga.init();
 
-    $(document.body).removeClass('loading').addClass('loaded');
+    /**
+     * Attach event handling for exports (GA)
+     */
+    $('a[href*="export/"]').on('click', function() {
+        var href = $(this).attr('href')
+        var filename = href.substr(href.lastIndexOf("/") + 1);
+        ga.event('export', 'download', filename);
+    });
+
+    /**
+     * Activate tooltips
+     */
+    $('[data-toggle="tooltip"]').tooltip();
+
+
+    //enable transitions
+    $(document.body)    .addClass('enable-transition')
+                        .addClass('loaded')
+                        .removeClass('nojs')
+                        .removeClass('loading');
 });
-
-
-$('[data-toggle="tooltip"]').tooltip();
