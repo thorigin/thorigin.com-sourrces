@@ -89,7 +89,6 @@ $(()=> {
     //High res load function
     var load_high_res_bg = () => {
         if(!load_high_res_bg_done) {
-            console.log('Testing whetehr window is large enough..');
             if($(window).width() > 768) {
                 console.log('Loading images');
                 var load = { home: home_bg, resume: resume_bg, contact: contact_bg };
@@ -102,8 +101,6 @@ $(()=> {
                     var key_bg = $('.backgrounds.' + key).addClass('done');
                 });
                 load_high_res_bg_done = true;
-            } else {
-                console.log('Test false');
             }
         }
     };
