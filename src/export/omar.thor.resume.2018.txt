@@ -1,55 +1,86 @@
-Omar Thor
-Bakersfield, CA 93313
-Phone: (661) 381-3740 | Email: omar@thorigin.com
-thorigin.com
+﻿#  Omar Thor  
+Software Engineer
+(661) 381-3740
+omar@thorigin.com
+
+--- 
+I am a highly motivated, goal oriented, and versatile professional with a 
+background in full-stack development and software engineering focusing on C++ 
+and Java.
+--- 
+
+# EXPERIENCE
+
+## Undergraduate Researcher
+CSUB
+Bakersfield, CA
+2017 – 2018
+    
+* Coordinated a team for the evaluation of ultra-wide band sensor for machine 
+  learning.
+* Constructed a deep learning framework from ground up
+* Gathered, organized, and prepared data from hardware sensor and applied
+  framework to classify data
 
 
-EDUCATION & DEVELOPMENT
+## Software Consultant
+NCS
+Reykjavik, Iceland
+2015 – 2017
 
-* Computer Science, Bsc. - August '16 - May '18
-    - California State University, Bakersfield
-    - Expected graduation May 2018.
+* Conducted performance reviews to solve major bottlenecks
+* Rectified integration issues and enhanced platform flexibility
+* Refined core services to further simplify and enhance internal debugging and
+  testing capabilities
+* Facilitated and improved localization and internationalization support
 
-* Math & Science, AA. - August '14 - May '16
-    - Taft College - Taft, CA
 
-* Entrepreneur & Management, Certificate - August '11 - Dec '11
-    - Innov. Center Iceland, Iceland
+## Senior Software Engineer
+NCS
+Reykjavik, Iceland
+2011 – 2014
 
-EXPERIENCE
+* Oversaw the full software development life cycle (SDLC) of projects
+* Performed requirement elicitation for new projects and features.
+* Incorporated open source technologies to achieve platform and vendor 
+  independence
+* Applied defensive programming techniques, and followed industry best 
+  practices and standards in design decisions.
+* Oversaw migration from an in-house architecture to an open cloud platform
 
-* Undergraduate Research - CSUB, Bakersfield, CA - 2017 - 2018
-Data gathering and analysis of ultra-wide-band sensor technologies with focus on
-preparing data for artificial intelligence application.
 
-* Software Consultant - NCS ehf, Iceland - 2015 - 2017
-Continuation support role with aim to provide expert advice and solutions for 
-various NCS projects.
+## Technician
+IOD
+Reykjavik, Iceland
+2008 – 2011
 
-* Principal Software Engineer - NCS ehf, Iceland - 2011 - 2015
-Modeled and implemented business solutions with focus on using open source 
-technologies. Played a key role in choosing technologies, coding conventions, 
-applied defensive programming techniques, and followed industry best practice 
-standards. Involved in all aspects of the software development life cycle (SDLC)
-and maintenance of various internal solutions to hardware and software.
-    - Migrated projects from a in-house architecture to a cloud platform which 
-      yielded a uptime increase by 80%.
-    - Incorporated all projects to a continuous integration solution which 
-      automated testing, deployment and verification to provide rolling releases
-      which reduced downtime by a factor of 5.
-    - Undertook in a major refactoring which increased modularization and 
-      testability of various components which resulted decreased deployment time
-      and performance.
+* Diagnosed and troubleshooted clientele's hardware and software
+* Developed and maintained internal software and hardware solutions
 
-* Technician - IOD ehf, Iceland - 2008 - 2011
-Diagnosed and troubleshooted clientèle's hardware and software issues, providing
-rapid solutions to clients, including the development and maintenance of various
-internal solutions.
+--- 
 
-TECHNOLOGIES & STACKS
+# EDUCATION
 
-C++ (11/14/17), C, Java (1.5-1.9), Java EE 7 (EJB, JPA, JMS, JSP, JSF, JAX-RS,
-JDBC, etc), LISP, Prolog, PHP, JavaScript, XML/HTML/XHTML/HTML5, CSS, TCP/IP,
-SQL, MySQL, Postgresql, Microsoft SQL Server, Hibernate, TopLink, REST, SOAP,
-OSGi, JUnit, Maven, Jenkins, NetBeans, Google Web Toolkit, Eclipse, Ant, SCM,
-GIT, SVN, MatLab, Linux, Windows, UML, and more.
+## Computer Science, B.sc
+CSU
+Bakersfield, CA
+2016 - 2018
+
+## Mathematics & Science, AA
+Taft College
+Taft, CA
+2014 – 2016
+
+--- 
+# SKILLS
+
+## Strong: 
+C++ (11/14/17), C, Java (1.5-1.9), Java EE 7, Maven, Make, CMake, 
+Linux, SQL, Postgres SQL, OpenMP, STL, BOOST, Bash, HTML5, CSS, 
+JavaScript, Hibernate, REST, SOAP, OSGi, Junit, SCM, GIT, Netbeans
+
+## Knowledgeable:
+Jenkins, Eclipse, GWT, Eclipse, Ant, SVN, MatLab, Windows,
+UML, MongoDB, LISP, Prolog, Perl, PHP, Python, WebPack, TCP/IP, 
+Microsoft SQL Server, TopLink, and more
+

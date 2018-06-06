@@ -15,4 +15,6 @@ import faInfo from '@fortawesome/fontawesome-free-solid/faInfo';
 import faAddressCard from '@fortawesome/fontawesome-free-solid/faAddressCard';
 import faQuoteLeft from '@fortawesome/fontawesome-free-solid/faQuoteLeft';
 
-fontawesome.library.add(faFile, faFile, faFileWord, faFileAlt, faFilePDF, faCodeBranch, faInfo, faAddressCard, faQuoteLeft);
+import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
+
+fontawesome.library.add(faFile, faFile, faFileWord, faFileAlt, faFilePDF, faCodeBranch, faInfo, faAddressCard, faQuoteLeft, faGithub);

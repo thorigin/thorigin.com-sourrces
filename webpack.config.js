@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const JSSRC = path.resolve(__dirname, 'src/js');
@@ -9,11 +10,13 @@ const IMGS = path.resolve(__dirname, 'src/images');
 
 const paths = [
     {
-         path: '/#home'
+        path: '/#home'
     },{
-         path: '/#resume'
+        path: '/#projects'
     },{
-         path: '/#contact'
+        path: '/#resume'
+    },{
+        path: '/#contact'
     },{
         path: '/export/omar.thor.resume.2018.pdf'
     },{
@@ -24,6 +27,8 @@ const paths = [
         path: '/export/omar.thor.resume.2018.txt'
     }
 ];
+
+const production = process.env.NODE_ENV === 'production';
 
 var extractSass = new ExtractTextPlugin({
     filename: "[name].css"
@@ -52,13 +57,15 @@ module.exports = {
                 jQuery: "jquery",
                 "window.jQuery": "jquery"
             }),
-            new webpack.optimize.CommonsChunkPlugin({
-                children: true
-            }),
             extractSass,
-            new SitemapPlugin('http://thorigin.com', paths)
+            new SitemapPlugin('http://thorigin.com', paths),
+            new OptimizeCssAssetsPlugin({
+                cssProcessor: require('cssnano'),
+                cssProcessorOptions: { discardComments: { removeAll: true } },
+                canPrint: true
+            })
     ],
-    module: {
+    module: {        
         rules: [
             {
                 test: /\.scss$/,
@@ -96,12 +103,15 @@ module.exports = {
                     }
                 ]
             }, {
-                 test: /\.js$/,
-                 loader: 'babel-loader',
-                 query: {
-                     presets: ['es2015']
-                 }
-             }
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['babel-preset-env']
+                    }                    
+                }
+            }
         ]
     }
 };

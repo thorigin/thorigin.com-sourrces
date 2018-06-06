@@ -7,9 +7,11 @@ import 'bootstrap-sass/assets/javascripts/bootstrap/tooltip.js';
 var lastView = null;
 var viewBag = [];
 var switchView = function(targetSection) {
+
     if(targetSection.startsWith('#')) {
         targetSection = targetSection.substr(1);
     }
+
     if(targetSection.indexOf('/') != -1) {
         var splits = targetSection.split('/');
         targetSection = splits[0];
@@ -23,7 +25,11 @@ var switchView = function(targetSection) {
             }
         }
     }
-    var res = $('#' + targetSection);
+    var navs = $('.desktop-nav, \#MobileNav');
+    navs.find('a').parent('li').removeClass('selected');
+    navs.find('a[href="#' + targetSection + '"]').parent('li').addClass('selected');
+
+    var res = $('#' + targetSection + "-section");
     var body = $(document.body);
     if(res.length > 0) {
         //hide last selected section
@@ -36,10 +42,7 @@ var switchView = function(targetSection) {
         body.addClass(targetSection);
     }
     lastView = targetSection;
-//    $('html, body').animate({
-//        scrollTop: $($.attr(this, 'href')).offset().top
-//    }, 500);
-
+    
     ga.send();
 };
 
@@ -73,6 +76,7 @@ switchView(location.hash ? location.hash : 'home');
 import home_bg from './../images/home-bg.jpeg';
 import resume_bg from './../images/resume-bg.jpeg';
 import contact_bg from './../images/contact-bg.jpeg';
+import projects_bg from './../images/projects-bg.jpeg';
 
 $(()=> {
 
@@ -91,10 +95,10 @@ $(()=> {
         if(!load_high_res_bg_done) {
             if($(window).width() > 768) {
                 console.log('Loading images');
-                var load = { home: home_bg, resume: resume_bg, contact: contact_bg };
+                var load = { home: home_bg, resume: resume_bg, contact: contact_bg, projects: projects_bg };
 
                 $.each(load, (key, value) => {
-                    var tempImg = $('<img/>').attr('src', value).hide().appendTo(document.body);
+                    var tempImg = $('<img style="display: none;"/>').attr('src', value).appendTo(document.body);
                     tempImg.on('load', () => {
                         tempImg.remove();
                     });
